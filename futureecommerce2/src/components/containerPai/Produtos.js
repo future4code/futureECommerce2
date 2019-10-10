@@ -12,10 +12,14 @@ export default class Produtos extends Component {
              
         }
     }
+
+    funcaoaserchamada= (idrecebido) => {
+        this.props.produtoselecionado(idrecebido)
+    }
     
     render() {
         const todosProdutosItem = this.props.todosProdutos.map((item)=>{
-            return (<ProdutoItem produto={item}/>);
+            return (<ProdutoItem produto={item} propaserchamada={this.funcaoaserchamada}/>);
         })
         return (
             <Container>
