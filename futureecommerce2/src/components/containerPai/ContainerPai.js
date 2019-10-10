@@ -14,12 +14,16 @@ export default class ContainerPai extends Component {
              
         }
     }
+
+    funcaoaserchamada= (iddoproduto) => {
+        this.props.produtoselecionado(iddoproduto)
+    }
     
     render() {
         return (
             <Container>
                 <FiltroOrdenador/>
-                <Produtos todosProdutos={this.props.todosProdutos}/>
+                <Produtos todosProdutos={this.props.todosProdutos} produtoselecionado={this.funcaoaserchamada}/>
             </Container>
         )
     }

@@ -14,6 +14,10 @@ export default class ProdutoItem extends Component {
         }
     }
     
+    funcaoaserchamada= () => {
+        this.props.propaserchamada(this.props.produto.id)
+    }
+    
     render() {
         const produto = this.props.produto;
         return (
@@ -21,7 +25,7 @@ export default class ProdutoItem extends Component {
                 <p>{produto.name}</p>
                 <img src={produto.imageUrl} alt="" />
                 <p>{produto.value}</p>
-                <BotaoAction/>
+                <BotaoAction cliqueiagora={this.funcaoaserchamada}/>
             </Container>
         )
     }

@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 
 export default class BotaoAction extends Component {
+    constructor(props) {
+        super(props)
+
+    }
+    
     render() {
         return (
             <div>
-                <button>Adicionar ao Carrinho</button>
+                <button onClick={() => this.props.cliqueiagora()}>Adicionar ao Carrinho</button>
             </div>
         )
     }
