@@ -5,54 +5,56 @@ import Filtros from './components/filtros/Filtros'
 import CestaDeCompras from './components/cestaDeCompras/CestaDeCompras'
 
 
+
+
 /*Array com os oito produtos do E-commerce*/
 const listaDeProdutos = [
   {
     name: "Foguete da Missão Apollo 11",
     value: 100.0,
-    imageUrl: "https://future4alunos.slack.com/files/UM7N1QLF8/FPAQXJM1C/img2.jpg",
+    imageUrl: require('./fotos/img1.jpeg'),
     id: 1
   },
   {
     name: "Foguete da Missão Apollo 11",
     value: 100000.0,
-    imageUrl: "https://picsum.photos/200/200",
+    imageUrl: require('./fotos/img2.jpg'),
     id: 2
   },
   {
     name: "Foguete da Missão Apollo 11",
     value: 555.0,
-    imageUrl: "https://picsum.photos/200/200",
+    imageUrl: require('./fotos/img3.jpg'),
     id: 3
   },
   {
     name: "Foguete da Missão Apollo 11",
     value: 888.0,
-    imageUrl: "https://picsum.photos/200/200",
+    imageUrl: require('./fotos/img4.jpg'),
     id: 4
   },
   {
     name: "Foguete da Missão Apollo 11",
     value: 999.0,
-    imageUrl: "https://picsum.photos/200/200",
+    imageUrl: require('./fotos/img5.jpg'),
     id: 5
   },
   {
     name: "Foguete da Missão Apollo 11",
     value: 111.0,
-    imageUrl: "https://picsum.photos/200/200",
+    imageUrl:  require('./fotos/img6.jpg'),
     id: 6
   },
   {
     name: "Foguete da Missão Apollo 11",
     value: 1000.0,
-    imageUrl: "https://picsum.photos/200/200",
+    imageUrl: require('./fotos/img7.jpg'),
     id: 7
   },
   {
     name: "Foguete trues",
     value: 777.0,
-    imageUrl: "https://picsum.photos/200/200",
+    imageUrl: require('./fotos/img8.jpeg'),
     id: 8
   }
 ];
