@@ -4,7 +4,9 @@ import Produtos from './Produtos'
 import styled from 'styled-components'
 
 const Container = styled.section`
-    border: 2px solid black;
+    > *{
+        margin-bottom: 10px;
+    }
 `
 
 export default class ContainerPai extends Component {
@@ -25,7 +27,8 @@ export default class ContainerPai extends Component {
     /*O container "ContainerPai" chamou para si a "props" todosProdutos que recebe a listaDeProdutos e, também chamou a "props" produtoselecionado que recebeu a funcaoaserchamada, declarada anteriormente na classe.*/
     render() {
         return (
-            <Container>
+            <Container className="nes-container with-title is-centered is-rounded">
+                <p class="title"><h3>Produtos</h3></p>
                 <FiltroOrdenador/>
                 <Produtos todosProdutos={this.props.todosProdutos} produtoselecionado={this.funcaoaserchamada}/>
             </Container>

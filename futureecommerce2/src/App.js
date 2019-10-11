@@ -50,12 +50,14 @@ const listaDeProdutos = [
     id: 7
   },
   {
-    name: "Foguete da Missão Apollo 11",
+    name: "Foguete trues",
     value: 777.0,
     imageUrl: "https://picsum.photos/200/200",
     id: 8
   }
-]
+];
+
+let listaDeProdutosFiltrada = [...listaDeProdutos];
 
 /*Esta classe está passando por "props" uma listadecompras que inicia com um array vazio dos produtos do E-commerce*/
 class App extends React.Component {
@@ -63,7 +65,8 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      listadecompras : []
+      listadecompras : [],
+      listaDeProdutosFiltrada: listaDeProdutos
     }
   }
 
@@ -81,14 +84,32 @@ class App extends React.Component {
     this.setState({listadecompras : listadecompras})
   }
 
+
   /*A função render está chamando os containers "Filtros", "ContainerPai" e "CestaDeCompras", para que tudo aquilo que existir dentro de cada um deles, seja trazido ao APP.js que é pai de todos esses containers*/
   /*O container "ContainerPai" chamou para si a "props" todosProdutos que recebe a listaDeProdutos e, também chamou a "props" produtoselecionado que recebeu a funcaoaserchamada, declarada anteriormente na classe.*/
-  render() {
 
+  filtrarListaDeProdutos(vmin,vmax,itemBuscado){
+    const minimo = vmin || 0;
+    const maximo = vmax || Number.MAX_SAFE_INTEGER;
+    const buscado = itemBuscado || "";
+    const novaListaFiltrada = [...listaDeProdutos].filter((element)=>{
+      if((element.value >= minimo && element.value <= maximo) && (buscado === element.name || buscado === "")){
+        return true
+      }
+      return false
+    });
+    listaDeProdutosFiltrada = [...novaListaFiltrada];
+    console.log(listaDeProdutosFiltrada)
+    this.setState({
+      listaDeProdutosFiltrada: novaListaFiltrada
+    });
+  }
+
+  render() {
     return (
       <div className="App">
-        <Filtros />
-        <ContainerPai todosProdutos={listaDeProdutos} produtoselecionado={this.funcaoaserchamada} />
+        <Filtros onChangeFilter = {this.filtrarListaDeProdutos.bind(this)}/>
+        <ContainerPai todosProdutos={listaDeProdutosFiltrada} produtoselecionado={this.funcaoaserchamada} />
         <CestaDeCompras todosItensDaCesta={this.state.listadecompras}/>
       </div>
     );

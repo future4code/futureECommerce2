@@ -9,7 +9,7 @@ export default class BotaoAction extends Component {
     render() {
         return (
             <div>
-                <button onClick={() => this.props.cliqueiagora()}>Adicionar ao Carrinho</button>
+                <button className="nes-btn is-primary" onClick={() => this.props.cliqueiagora()}>Adicionar ao Carrinho</button>
             </div>
         )
     }
