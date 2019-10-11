@@ -15,7 +15,7 @@ export default class ItemDaCesta extends Component {
                 <p>Quantidade</p>
                 <p>{produto.name}</p>
                 <p>{produto.value}</p>
-                <button>Deletar</button>
+                <button className="nes-btn is-error">Deletar</button>
             </div>
         )
     }
