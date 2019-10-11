@@ -6,7 +6,7 @@ constructor(props) {
     super(props)
 
     this.state = {
-        filtrodeordem
+        filtrodeordem: "",
          
     }
 }
@@ -16,9 +16,7 @@ constructor(props) {
     (Preciso usar o if e o else?)
     */
 funcaoaserchamada= () => {
-    const ordemdalistadeprodutos = [produtos, ...listaDeProdutos]
-    console.log(ordemdalistadeprodutos)
-    this.setState.listaDeProdutos({ordemdalistadeprodutos})
+    
 }
 
   render() {
