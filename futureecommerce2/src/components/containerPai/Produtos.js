@@ -3,7 +3,9 @@ import ProdutoItem from './ProdutoItem'
 import styled from 'styled-components'
 
 const Container = styled.section`
-    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
 `
 export default class Produtos extends Component {
     constructor(props) {

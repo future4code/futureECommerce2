@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import BotaoAction from './BotaoAction'
 
 const Container = styled.section`
-    border: 2px solid red;
+
 `
 export default class ProdutoItem extends Component {
     constructor(props) {
@@ -21,10 +21,10 @@ export default class ProdutoItem extends Component {
     render() {
         const produto = this.props.produto;
         return (
-            <Container>
+            <Container className="nes-container is-rounded">
                 <p>{produto.name}</p>
                 <img src={produto.imageUrl} alt="" />
-                <p>{produto.value}</p>
+                <p>R$ {produto.value},00</p>
                 <BotaoAction cliqueiagora={this.funcaoaserchamada}/>
             </Container>
         )
