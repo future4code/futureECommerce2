@@ -70,18 +70,18 @@ class App extends React.Component {
     }
   }
 
+
   /*A função chamada de "funcaoaserchamada" recebe o iddoproduto e por meio de uma arrow function passa para listadecompras todos os itens disponíveis na listaDeProdutos, criando um novo array com os valores passados.*/
   /*A  "props" listadecompras é chamada dentro da função, passando a sua prórpia refência com um filter que irá chamar cada produto que faz parte da listadeProdutos, que agora pertence a um novo array formado pela listadecompras. Se o iddoproduto que foi recebido pela função "funcaoaserchamada" for igual em todos os aspectos ao produto e ao id, então o retorno será verdadeiro.*/
   /*E como a listadecompras gerou um novo array com o conteúdo de um array anterior existente e, queremos mudá-la por meio de seu estado que foi definido no construtor antes que a função "funcaoaserchamada" fosse criada, passamos a listadecompras para ela mesma, setando o seu estado atual dizendo que este estado é ele próprio.*/
   
-  funcaoaserchamada = (iddoproduto) => {
-    let listadecompras = [...listaDeProdutos]
-    listadecompras = listadecompras.filter((produto) => {
-      if (iddoproduto === produto.id) {
-        return true
-      }
-    })
-    this.setState({listadecompras : listadecompras})
+  funcaoaserchamada = (produto) => {
+    
+    produto["quantidade"] = 0;
+
+
+    let upgradelistadecompras = [...this.state.listadecompras,produto]
+    this.setState({listadecompras:upgradelistadecompras})  
   }
 
 

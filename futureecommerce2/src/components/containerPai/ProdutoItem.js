@@ -15,7 +15,7 @@ export default class ProdutoItem extends Component {
     }
     
     funcaoaserchamada= () => {
-        this.props.propaserchamada(this.props.produto.id)
+        this.props.propaserchamada(this.props.produto)
     }
     
     render() {

@@ -15,8 +15,8 @@ export default class Produtos extends Component {
         }
     }
 
-    funcaoaserchamada= (idrecebido) => {
-        this.props.produtoselecionado(idrecebido)
+    funcaoaserchamada= (produtoRecebido) => {
+        this.props.produtoselecionado(produtoRecebido)
     }
     
     render() {
