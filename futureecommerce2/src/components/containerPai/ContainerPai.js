@@ -15,8 +15,8 @@ export default class ContainerPai extends Component {
         }
     }
 
-    funcaoaserchamada= (iddoproduto) => {
-        this.props.produtoselecionado(iddoproduto)
+    funcaoaserchamada= (produto) => {
+        this.props.produtoselecionado(produto)
     }
     
     render() {

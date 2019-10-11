@@ -64,19 +64,32 @@ class App extends React.Component {
     }
   }
 
-  funcaoaserchamada = (iddoproduto) => {
-    let listadecompras = [...listaDeProdutos]
-    listadecompras = listadecompras.filter((produto) => {
-      if (iddoproduto === produto.id) {
-        return true
-      }
+  /*
+  1º passo - receber um produto 
+  2º passo - iterar na lista de compras 
+  3º passo - exibir a lista de compras 
+  */
+
+  funcaoaserchamada = (produto) => {
+   /* {`
+    se existe o "produto" na minha lista de produtos
+    vou na minha ista de produtos e aumento sua quantidade
+    senao
+    `}*/
+    
+    produto["quantidade"] = 0;
+    /*const verificarSeExiste = this.state.listadecompras.map((produto) =>{
     })
-    this.setState({listadecompras : listadecompras})
+    let total ={}
+    for (produto of listadecompras){
+      total[produto] = (total[produto] || 0) +1
+    }
+    */
+    let upgradelistadecompras = [...this.state.listadecompras,produto]
+    this.setState({listadecompras:upgradelistadecompras})  
   }
 
-
   render() {
-
     return (
       <div className="App">
         <Filtros />
